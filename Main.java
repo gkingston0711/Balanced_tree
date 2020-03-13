@@ -56,7 +56,7 @@ class Main {
         list object3=new list();
 
 
-        dinner party90 = new dinner(15,"5pm","jordan_dinner");
+        dinner party90 = new dinner(15,"5pm","zoltan_dinner");
         Event new_event90= party;
         object3.insert(party90);
 
@@ -100,13 +100,13 @@ class Main {
         tree tree1=new tree();
 
         Tnode one=new Tnode(object);
-        System.out.println(object.get_head().get_event().get_name());
+        //System.out.println(object.get_head().get_event().get_name());
         Tnode two=new Tnode(object2);
-        System.out.println(object2.get_head().get_event().get_name());
+        //System.out.println(object2.get_head().get_event().get_name());
         Tnode three=new Tnode(object3);
-        System.out.println(object3.get_head().get_event().get_name());
+        //System.out.println(object3.get_head().get_event().get_name());
         Tnode four=new Tnode(object4);
-        System.out.println(object4.get_head().get_event().get_name());
+        //System.out.println(object4.get_head().get_event().get_name());
 
         tree1.insert(one);
         tree1.insert(two);

@@ -8,51 +8,57 @@ public class tree {
         root=null;
     }
 
-    public void insert(Tnode newest_node){
+    public void insert(Tnode newest_node) {
 
-        Tnode new_node=newest_node;
+        Tnode new_node = newest_node;
+        newest_node.set_left(null);
+        newest_node.set_right(null);
         new_node.set_color(0);
 
 
-        if(root==null) {
+        if (root == null) {
             root = new_node;
-            new_node.set_color(0);
+            //new_node.set_color(0);
+
+            System.out.println("***********CASE FOR EMPTY"+ new_node.get_Tlist().get_head().get_event().get_name()+"\n");
             return;
         }
+
         else if(root.get_right()==null && root.get_left()==null) {
             int value;
             value = root.get_Tlist().get_head().get_event().get_name().compareTo(newest_node.get_Tlist().get_head().get_event().get_name());
 
-        //    System.out.print(value +"*********************");
-          //  System.out.println(root.get_Tlist().get_head().get_event().get_name());
-           // System.out.println(new_node.get_Tlist().get_head().get_event().get_name());
+            System.out.println("***********CASE FOR ONE NODE"+ new_node.get_Tlist().get_head().get_event().get_name()+"\n");
 
             if (value == 0)
                 return;
             else if (value < 0) {
-                root.left = new_node;
+                root.set_left(new_node);
             } else {
-                root.right = new_node;
+                root.set_right(new_node);
             }
-
+            return;
         }
-        else {
             insert(new_node,root);
-        }
     }
+
+
     private void insert(Tnode new_node,Tnode root){
         if(root==null){
+
+            System.out.println("***********THIRD THING "+ new_node.get_Tlist().get_head().get_event().get_name()+"\n");
             root=new_node;
+            root.set_right(null);
+            root.set_left(null);
+            return;
         }
-        else {
+
+        else {//if(root.get_right()==null && root.get_left()==null) {
             int value;
             value = root.get_Tlist().get_head().get_event().get_name().compareTo(new_node.get_Tlist().get_head().get_event().get_name());
-            //System.out.println(value +"*********************");
-            //System.out.println(root.get_Tlist().get_head().get_event().get_name());
-            //System.out.println(new_node.get_Tlist().get_head().get_event().get_name());
-            if (value == 0) {
-                return;
-            } else if (value < 0) {
+       //     if (value == 0) {
+         //       return;
+             if (value < 0) {
                 insert(new_node, root.left);
             } else {
                 insert(new_node, root.right);
